@@ -1,0 +1,61 @@
+.clientes-container {
+  padding: 20px;
+}
+
+.clientes-container h1 {
+  margin-bottom: 20px;
+}
+
+/* Tabela de clientes */
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.clientes-table th,
+.clientes-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.clientes-table th {
+  background-color: #282c34; /* cabeçalho escuro */
+  color: white;
+  font-weight: bold;
+}
+
+.clientes-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* linhas alternadas */
+}
+
+.clientes-table tr:hover {
+  background-color: #e6f0ff; /* destaque ao passar o mouse */
+  transition: background-color 0.3s;
+}
+
+/* Select de cidades */
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}

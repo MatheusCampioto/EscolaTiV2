@@ -1,0 +1,21 @@
+.produtos-container {
+  padding: 20px;
+}
+
+.produtos-container h1 {
+  margin-bottom: 20px;
+}
+
+.produtos-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.produto-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+  width: 200px;
+  background-color: #f9f9f9;
+}
