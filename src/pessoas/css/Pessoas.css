@@ -1,0 +1,98 @@
+.pessoas-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.pessoas-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+/* Área de ações principais */
+.acoes-pessoas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Menu de exportação */
+.exportar-menu {
+  position: relative;
+}
+
+.exportar-menu .btn-exportar {
+  /* Estilo do botão vem do buttons.css */
+}
+
+.exportar-opcoes {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.exportar-menu:hover .exportar-opcoes {
+  display: block;
+}
+
+.exportar-opcoes button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.exportar-opcoes button:hover {
+  background: #f5f5f5;
+}
+
+/* Filtros */
+.pessoas-filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pessoas-filtros input,
+.pessoas-filtros select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Tabela */
+.pessoas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pessoas-table th,
+.pessoas-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.pessoas-table th {
+  background: #f5f5f5;
+  color: #2c3e50;
+}
+
+.pessoas-table tr:nth-child(even) {
+  background: #fafafa;
+}

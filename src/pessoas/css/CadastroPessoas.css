@@ -1,0 +1,124 @@
+.cadastro-pessoas {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cadastro-pessoas h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Fieldsets */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fafafa;
+}
+
+legend {
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 0 10px;
+  font-size: 15px;
+}
+
+/* Grupos de formulário */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 4px rgba(52,152,219,0.4);
+  outline: none;
+}
+
+/* Mensagens de erro */
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Botões */
+button {
+  min-width: 140px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #3498db;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form-group label {
+    width: 200px;
+    margin-bottom: 0;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    flex: 1;
+  }
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical; /* permite aumentar/diminuir altura */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 4px rgba(52,152,219,0.4);
+  outline: none;
+}

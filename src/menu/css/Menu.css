@@ -1,0 +1,122 @@
+/* ===== LOGIN ===== */
+.login-container {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #282c34;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #61dafb;
+  color: black;
+}
+
+/* ===== MENU LATERAL ===== */
+.sidebar {
+  width: 220px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+
+  /* Correção para rolagem */
+  overflow-y: auto;   /* ativa scroll vertical */
+  max-height: 100vh;  /* limita à altura da tela */
+}
+
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 8px 0;
+}
+
+.sidebar a,
+.sidebar span {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar span:hover {
+  background-color: #34495e;
+  padding-left: 20px; /* efeito de deslizar */
+}
+
+/* Submenu */
+.submenu {
+  margin-left: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 4px 0;
+}
+
+.submenu li {
+  margin: 4px 0;
+}
+
+.submenu a {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.submenu a:hover {
+  background-color: #3b4a5a;
+  padding-left: 22px;
+}

@@ -1,0 +1,52 @@
+.pedidos-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.pedidos-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 24px;
+}
+
+/* Filtros */
+.pedidos-filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pedidos-filtros input,
+.pedidos-filtros select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Tabela */
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pedidos-table th,
+.pedidos-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.pedidos-table th {
+  background: #f5f5f5;
+  color: #2c3e50;
+}
+
+.pedidos-table tr:nth-child(even) {
+  background: #fafafa;
+}

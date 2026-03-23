@@ -1,0 +1,182 @@
+.lista-pessoas {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.lista-pessoas h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Botões de topo */
+.acoes-topo {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.acoes-topo button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  font-size: 18px;
+}
+
+.acoes-topo button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-nova { background: #4caf50; }
+.btn-resetar { background: #ff9800; }
+.btn-exportar { background: #6c63ff; }
+
+/* Filtros */
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+.input-icon svg {
+  margin-right: 6px;
+  font-size: 16px;
+  color: #888;
+}
+
+.input-icon input,
+.input-icon select {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-icon input:focus,
+.input-icon select:focus {
+  border-color: #6c63ff;
+}
+
+.btn-limpar {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f44336;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-limpar:hover {
+  background: #d32f2f;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead {
+  background: #6c63ff;
+  color: #fff;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* Botões de ação na tabela */
+.btn-editar, .btn-remover {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.btn-editar { background: #2196f3; }
+.btn-remover { background: #f44336; }
+
+.btn-editar:hover, .btn-remover:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-limpar {
+    width: 100%;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  thead th, tbody td {
+    padding: 8px;
+  }
+}

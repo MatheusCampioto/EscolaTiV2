@@ -1,0 +1,68 @@
+.relatorios-filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Campo de busca */
+.input-busca {
+  padding: 10px 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 250px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.input-busca:focus {
+  border-color: #1976d2; /* azul mais escuro */
+  outline: none;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+}
+
+/* Select de estados */
+.select-estado {
+  padding: 10px 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.select-estado:focus {
+  border-color: #1976d2;
+  outline: none;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+}
+
+/* Cabeçalho da tabela mais destacado */
+.relatorios-tabela th {
+  background-color: #1976d2; /* azul escuro */
+  color: #fff;               /* texto branco */
+  font-weight: bold;
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Linhas da tabela */
+.relatorios-tabela td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.relatorios-tabela tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.relatorios-tabela tr:hover {
+  background-color: #e3f2fd; /* azul bem claro no hover */
+}
+
+/* Mensagem quando não há registros */
+.relatorios-vazio {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+  font-style: italic;
+}

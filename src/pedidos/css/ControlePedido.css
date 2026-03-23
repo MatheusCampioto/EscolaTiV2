@@ -1,0 +1,32 @@
+.controle-pedido {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.controle-pedido h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.controle-pedido table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.controle-pedido th, 
+.controle-pedido td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.controle-pedido th {
+  background: #f4f4f4;
+}
+
+.controle-pedido tr:nth-child(even) {
+  background: #fafafa;
+}

@@ -1,0 +1,113 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.dashboard-container h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #0d47a1;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard-card {
+  flex: 1 1 200px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+  font-size: 18px;
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Gráficos */
+.dashboard-charts {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard-chart {
+  flex: 1 1 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.dashboard-chart h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #282c34;
+}
+
+/* Resumo abaixo do gráfico de pedidos */
+/* Resumo abaixo do gráfico de pedidos */
+.status-summary {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 15px;
+  color: #444;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.status-summary p {
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  min-width: 140px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Ícones coloridos */
+.status-summary .icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status-summary p.concluido {
+  border-left: 5px solid #66bb6a;
+}
+
+.status-summary p.pendente {
+  border-left: 5px solid #ffa726;
+}
+
+.status-summary p.cancelado {
+  border-left: 5px solid #ef5350;
+}
