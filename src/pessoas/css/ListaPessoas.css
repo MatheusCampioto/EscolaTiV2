@@ -41,9 +41,10 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.btn-nova { background: #4caf50; }
-.btn-resetar { background: #ff9800; }
-.btn-exportar { background: #6c63ff; }
+.btn-nova { background: #4caf50; }       /* verde */
+.btn-recarregar { background: #ff9800; } /* laranja */
+.btn-exportar { background: #6c63ff; }   /* roxo */
+.btn-resetar { background: #f44336; }    /* vermelho */
 
 /* Filtros */
 .filtros {
@@ -99,7 +100,7 @@
   border: none;
   border-radius: 8px;
   background: #f44336;
-  color: #fff;
+  color: #b52e2e;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -119,7 +120,7 @@ table {
 }
 
 thead {
-  background: #6c63ff;
+  background: #a5a3b9;
   color: #fff;
 }
 

@@ -1,52 +1,333 @@
 .produtos-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", sans-serif;
 }
 
 .produtos-container h1 {
   text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Botões de topo */
+.acoes-topo {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
   margin-bottom: 25px;
-  color: #2c3e50;
-  font-size: 24px;
+}
+
+.acoes-topo button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  font-size: 18px;
+}
+
+.acoes-topo button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-novo { background: #4caf50; }
+.btn-recarregar { background: #ff9800; }
+.btn-exportar { background: #6c63ff; }
+.btn-resetar { background: #f44336; }
+
+/* Formulário de cadastro */
+.cadastro-produto form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+/* Fieldsets padrão */
+.cadastro-produto fieldset {
+  margin-bottom: 20px;
+}
+
+.cadastro-produto legend {
+  font-size: 15px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #6c63ff;
+}
+
+.mensagem-feedback {
+  grid-column: 1 / -1;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Mensagem de sucesso */
+.mensagem-feedback.sucesso::before {
+  content: "✔ ";
+  font-weight: bold;
+}
+
+
+/* Mensagem de erro */
+.mensagem-feedback.erro::before {
+  content: "⚠ ";
+  font-weight: bold;
+}
+
+
+
+/* Animação */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Observações ocupa toda a largura */
+.observacoes-fieldset {
+  grid-column: 1 / -1; /* força ocupar toda a linha */
+}
+
+.observacoes-textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 14px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 6px;
+}
+
+.input-icon svg {
+  margin-right: 5px;
+  font-size: 15px;
+  color: #888;
+}
+
+.input-icon input,
+.input-icon select,
+textarea {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  transition: box-shadow 0.2s ease;
+}
+
+.input-icon input:focus,
+.input-icon select:focus,
+textarea:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.4);
+}
+
+textarea {
+  flex: 1;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 70px;
+}
+
+.input-icon input:focus,
+.input-icon select:focus,
+textarea:focus {
+  border-color: #6c63ff;
+}
+
+/* Observações ocupa toda a largura e mais altura */
+fieldset.observacoes-fieldset {
+  grid-column: 1 / -1;   /* força ocupar toda a linha do grid */
+  width: 100%;           /* garante largura total */
+}
+
+.observacoes-group {
+  width: 100%;
+}
+
+.observacoes-textarea {
+  display: block;
+  width: 100%;           /* ocupa toda a largura disponível */
+  min-height: 300px;     /* altura maior para textos longos */
+  padding: 14px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;      /* permite expandir manualmente */
+  line-height: 1.5;
+  box-sizing: border-box; /* evita estourar o layout */
+}
+
+
+/* Botões do formulário */
+.acoes-form {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-salvar {
+  background: linear-gradient(135deg, #4caf50, #43a047);
+}
+
+.btn-limpar {
+  background: linear-gradient(135deg, #f44336, #e53935);
+}
+
+.btn-salvar {
+  background: #4caf50;
+  color: #fff;
+}
+
+.btn-limpar {
+  background: #f44336;
+  color: #fff;
+}
+
+.btn-salvar:hover, .btn-limpar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* Filtros */
 .produtos-filtros {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 25px;
 }
 
-.produtos-filtros input,
-.produtos-filtros select {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+.produtos-filtros .campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.produtos-filtros label {
   font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
 }
 
 /* Tabela */
 .produtos-table {
   width: 100%;
   border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.produtos-table th,
-.produtos-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
+.produtos-table thead {
+  background: #6c63ff;
+  color: #fff;
 }
 
 .produtos-table th {
-  background: #f5f5f5;
-  color: #2c3e50;
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
 }
 
-.produtos-table tr:nth-child(even) {
-  background: #fafafa;
+.produtos-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.produtos-table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Botões de ação na tabela */
+.btn-editar, .btn-remover {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.btn-editar { background: #2196f3; }
+.btn-remover { background: #f44336; }
+
+.btn-editar:hover, .btn-remover:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .produtos-filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-limpar {
+    width: 100%;
+  }
+
+  .cadastro-produto form {
+    grid-template-columns: 1fr;
+  }
+
+  .produtos-table {
+    font-size: 13px;
+  }
+
+  .produtos-table th,
+  .produtos-table td {
+    padding: 8px;
+  }
 }

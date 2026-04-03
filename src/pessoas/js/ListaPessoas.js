@@ -1,6 +1,16 @@
 import React, { useState, useContext } from "react";
 import "../css/ListaPessoas.css";
-import { FaEdit, FaTrash, FaPlus, FaRedo, FaFileExport, FaUser, FaIdCard, FaCity, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaEdit,
+  FaTrash,
+  FaPlus,
+  FaRedo,
+  FaFileExport,
+  FaUser,
+  FaIdCard,
+  FaCity,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import { PessoasContext } from "../../context/PessoasContext";
 
 function ListaPessoas() {
@@ -18,35 +28,57 @@ function ListaPessoas() {
   const [filtroCidade, setFiltroCidade] = useState("");
   const [filtroEstado, setFiltroEstado] = useState("");
 
-  const pessoasFiltradas = pessoas.filter((p) =>
-    p.nome.toLowerCase().includes(filtroNome.toLowerCase()) &&
-    p.cpfcnpj.includes(filtroCpf) &&
-    p.cidade.toLowerCase().includes(filtroCidade.toLowerCase()) &&
-    p.estado.toLowerCase().includes(filtroEstado.toLowerCase())
-  );
+  const pessoasFiltradas = pessoas.filter((p) => {
+    const nome = p.nome ? p.nome.toLowerCase() : "";
+    const cpf = p.cpfcnpj ? p.cpfcnpj.toLowerCase() : "";
+    const cidade = p.cidade ? p.cidade.toLowerCase() : "";
+    const estado = p.estado ? p.estado.toLowerCase() : "";
+
+    return (
+      nome.includes(filtroNome.toLowerCase()) &&
+      cpf.includes(filtroCpf.toLowerCase()) &&
+      cidade.includes(filtroCidade.toLowerCase()) &&
+      estado.includes(filtroEstado.toLowerCase())
+    );
+  });
 
   return (
     <div className="lista-pessoas">
       <h1>Lista de Pessoas</h1>
 
+      {/* Botões de topo */}
       <div className="acoes-topo">
         <button
-          className="btn-nova"
+          className="btn-novo"
           onClick={() =>
-            adicionarPessoa({ nome: "Nova Pessoa", cpfcnpj: "", cidade: "", estado: "" })
+            adicionarPessoa({
+              nome: "Nova Pessoa",
+              cpfcnpj: "",
+              cidade: "",
+              estado: "",
+            })
           }
           title="Nova Pessoa"
         >
           <FaPlus />
         </button>
-        <button className="btn-resetar" onClick={resetarPessoas} title="Resetar Lista">
+        <button
+          className="btn-recarregar"
+          onClick={resetarPessoas}
+          title="Recarregar Lista"
+        >
           <FaRedo />
         </button>
-        <button className="btn-exportar" onClick={exportarPessoas} title="Exportar">
+        <button
+          className="btn-exportar"
+          onClick={exportarPessoas}
+          title="Exportar"
+        >
           <FaFileExport />
         </button>
       </div>
 
+      {/* Filtros */}
       <div className="filtros">
         <div className="campo">
           <label>Nome</label>
@@ -119,6 +151,7 @@ function ListaPessoas() {
         </div>
       </div>
 
+      {/* Tabela */}
       <table>
         <thead>
           <tr>
@@ -133,10 +166,10 @@ function ListaPessoas() {
           {pessoasFiltradas.length > 0 ? (
             pessoasFiltradas.map((pessoa) => (
               <tr key={pessoa.id || pessoa.cpfcnpj}>
-                <td>{pessoa.nome}</td>
-                <td>{pessoa.cpfcnpj}</td>
-                <td>{pessoa.cidade}</td>
-                <td>{pessoa.estado}</td>
+                <td>{pessoa.nome || "—"}</td>
+                <td>{pessoa.cpfcnpj || "—"}</td>
+                <td>{pessoa.cidade || "—"}</td>
+                <td>{pessoa.estado || "—"}</td>
                 <td>
                   <button
                     className="btn-editar"

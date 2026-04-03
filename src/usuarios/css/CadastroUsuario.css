@@ -1,47 +1,85 @@
+/* Container do formulário */
 .cadastro-usuario {
   max-width: 500px;
   margin: 30px auto;
-  padding: 20px;
+  padding: 25px;
   background: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
 }
 
+/* Título */
 .cadastro-usuario h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-size: 22px;
+  font-weight: 600;
 }
 
+/* Grupo de campos */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  color: #444;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #bbb;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
 }
 
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #9c27b0;
+  outline: none;
+}
+
+/* Botão */
 .btn-salvar {
   display: block;
   width: 100%;
-  padding: 10px;
-  background: #9c27b0; /* Roxo para diferenciar */
+  padding: 12px;
+  background: #9c27b0; /* Roxo */
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn-salvar:hover {
   background: #7b1fa2;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .cadastro-usuario {
+    padding: 15px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .btn-salvar {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

@@ -180,15 +180,26 @@ function CadastroPessoas() {
               onChange={handleChange}
             />
           </div>
+          
           <div className="form-group">
-            <label>CPF/CNPJ:</label>
-            <MaskedInput
-              mask={[/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/]}
-              name="cpfcnpj"
-              value={formData.cpfcnpj}
-              onChange={handleChange}
-            />
-          </div>
+  <label>CPF/CNPJ:</label>
+  <MaskedInput
+    mask={(value) => {
+      const digits = value.replace(/\D/g, "");
+      if (digits.length <= 11) {
+        // CPF: 000.000.000-00
+        return [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/];
+      } else {
+        // CNPJ: 00.000.000/0000-00
+        return [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/];
+      }
+    }}
+    name="cpfcnpj"
+    value={formData.cpfcnpj}
+    onChange={handleChange}
+    guide={false} // evita preencher com underscores
+  />
+</div>
         </fieldset>
 
         {/* Endereço */}
@@ -261,18 +272,16 @@ function CadastroPessoas() {
   {/* Classificação */}
 <fieldset>
   <legend>Classificação</legend>
-
   <div className="form-group">
-    <label>Tipo:</label>
+    <label>Tipo de pessoa:</label>
     <select name="tipo" value={formData.tipo} onChange={handleChange}>
       <option>Pessoa Física</option>
       <option>Pessoa Jurídica</option>
     </select>
   </div>
 
-  {/* NOVO CAMPO: Tipo de Pessoa para a empresa */}
-  <div className="form-group">
-    <label>Tipo de Pessoa:</label>
+    <div className="form-group">
+    <label>Tipo de Pessoa Para Empresa:</label>
     <select name="tipoPessoa" value={formData.tipoPessoa} onChange={handleChange}>
       <option value="">Selecione</option>
       <option value="Cliente">Cliente</option>
@@ -281,7 +290,8 @@ function CadastroPessoas() {
     </select>
   </div>
 
-  <div className="form-group">
+
+    <div className="form-group">
     <label>Status:</label>
     <select name="status" value={formData.status} onChange={handleChange}>
       <option>Ativo</option>
@@ -289,6 +299,7 @@ function CadastroPessoas() {
       <option>Bloqueado</option>
     </select>
   </div>
+
 
   <div className="form-group">
     <label>Data de Cadastro:</label>
@@ -300,6 +311,7 @@ function CadastroPessoas() {
     />
   </div>
 </fieldset>
+
 </fieldset>
 
         {/* Botões */}

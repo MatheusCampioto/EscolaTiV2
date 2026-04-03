@@ -1,52 +1,175 @@
-.usuarios-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+.lista-usuarios {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", sans-serif;
 }
 
-.usuarios-container h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #2c3e50;
+.lista-usuarios h1 {
   font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* Filtros */
-.usuarios-filtros {
+/* Botões de topo */
+.acoes-topo {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  justify-content: center;
   margin-bottom: 20px;
 }
 
-.usuarios-filtros input,
-.usuarios-filtros select {
-  padding: 8px;
+.acoes-topo button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  font-size: 18px;
+}
+
+.acoes-topo button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-novo { background: #4caf50; }     /* verde */
+.btn-recarregar { background: #ff9800; } /* laranja */
+.btn-exportar { background: #6c63ff; }   /* roxo */
+.btn-resetar { background: #f44336; }     /* vermelho */
+
+/* Filtros */
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+.input-icon input {
+  flex: 1;
+  border: none;
+  padding: 10px;
   font-size: 14px;
+  outline: none;
+}
+
+.input-icon input:focus {
+  border-color: #6c63ff;
+}
+
+.btn-limpar {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #f44336;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-limpar:hover {
+  background: #d32f2f;
 }
 
 /* Tabela */
-.usuarios-table {
+table {
   width: 100%;
   border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.usuarios-table th,
-.usuarios-table td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-.usuarios-table th {
-  background: #f5f5f5;
+thead {
+  background: #6c63ff; /* roxo padrão ERP */
   color: #2c3e50;
 }
 
-.usuarios-table tr:nth-child(even) {
-  background: #fafafa;
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* Botões de ação na tabela */
+.btn-editar, .btn-remover {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.btn-editar { background: #2196f3; }   /* azul */
+.btn-remover { background: #f44336; } /* vermelho */
+
+.btn-editar:hover, .btn-remover:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-limpar {
+    width: 100%;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  thead th, tbody td {
+    padding: 8px;
+  }
 }
